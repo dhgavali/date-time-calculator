@@ -1,0 +1,166 @@
+body {
+  background-color: rgb(167, 255, 255);
+  display: flex;
+  justify-content: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.main .heading {
+  text-align: center;
+  font-family: cursive;
+  letter-spacing: 1.2px;
+  color: purple;
+}
+input[type="number"] {
+  width: 100px;
+  padding: 5px;
+  margin: 5px;
+  background-color: white;
+}
+
+input[type="button"],
+input[type="submit"] {
+  padding: 10px 10px;
+  font-size: 21px;
+  border: 1px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#calcBtn {
+  background-color: rgb(28, 180, 28);
+  color: white;
+  font-family: sans-serif;
+  letter-spacing: 1.5px;
+}
+
+#resetBtn {
+  background-color: maroon;
+  color: white;
+}
+
+.timeTitle td {
+  font-weight: 600;
+  text-align: center;
+}
+
+select {
+  width: 100%;
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.customDate td span {
+  background-color: white;
+  padding: 5px;
+  width: 100px;
+  border: 1px solid white;
+}
+
+.titleTop {
+  text-align: center;
+  background-color: gold;
+}
+
+.titleTop h3 {
+  margin-top: 2px;
+  padding-top: 5px;
+}
+
+.finalresult {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* list picking view */
+.picklist {
+  display: flex;
+  width: 200px;
+}
+datalist {
+  width: 100px;
+}
+
+/* background animations */
+body {
+  background: #87c3ff;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(255, 249, 213);
+  animation: ripple 15s infinite;
+  box-shadow: 0px 0px 1px 0px #508fb9;
+}
+
+.small {
+  width: 200px;
+  height: 200px;
+  left: -100px;
+  bottom: -100px;
+}
+
+.medium {
+  width: 400px;
+  height: 400px;
+  left: -200px;
+  bottom: -200px;
+}
+
+.large {
+  width: 600px;
+  height: 600px;
+  left: -300px;
+  bottom: -300px;
+}
+
+.xlarge {
+  width: 800px;
+  height: 800px;
+  left: -400px;
+  bottom: -400px;
+}
+
+.xxlarge {
+  width: 1000px;
+  height: 1000px;
+  left: -500px;
+  bottom: -500px;
+}
+
+.shade1 {
+  opacity: 0.2;
+}
+.shade2 {
+  opacity: 0.5;
+}
+
+.shade3 {
+  opacity: 0.7;
+}
+
+.shade4 {
+  opacity: 0.8;
+}
+
+.shade5 {
+  opacity: 0.9;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(0.8);
+  }
+}

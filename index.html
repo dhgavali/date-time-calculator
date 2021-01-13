@@ -1,0 +1,239 @@
+<html>
+<head>
+    <title>Work Time Calculator Using Javascript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class='ripple-background'>
+        <div class='circle xxlarge shade1'></div>
+        <div class='circle xlarge shade2'></div>
+        <div class='circle large shade3'></div>
+        <div class='circle mediun shade4'></div>
+        <div class='circle small shade5'></div>
+      </div>
+      
+    <div class="main">  
+        <div class="heading">
+            <h2>Work Time Calculator</h2>
+            <h3>Calculate the time difference</h3>
+        </div>
+       <form action="">
+        <table>
+            
+            <tr class="timeTitle">
+                <td>Year</td>
+                <td>Month</td>
+                <td>Day</td>
+                <td>Hour</td>
+                <td>Minute</td>
+                <td>Second</td>
+            </tr> 
+            <!-- first row ends -->
+            <tr>
+                <td>
+                    <input type="number" name="" id="yr1" 
+                    maxlength="4"  onblur="validateYear()"    
+                    placeholder="yyyy"  required 
+                    oninput="validateLength(this.maxLength, this.value, this.id)">
+                </td>    
+                <td>
+                    <input type="number" name="" id="mm1" 
+                    maxlength="2"  onchange="validateMonth()" 
+                    placeholder="mm" list="monthlist"     required 
+                    oninput="validateLength(this.maxLength, this.value, this.id)">
+                    <datalist id="monthlist">
+                        <option value="01 - Jan"> 
+                        <option value="02 - Feb">
+                        <option value="03 - Mar">
+                        <option value="04 - Apr">
+                        <option value="05 - May">
+                        <option value="06 - Jun">
+                        <option value="07 - Jul">
+                        <option value="08 - Aug">
+                        <option value="09 - Sep">
+                        <option value="10 - Oct">
+                        <option value="11 - Nov">
+                        <option value="12 - Dec">
+                      </datalist>
+                </td>      
+                <td>
+                    <input type="number" name="" id="dd1" 
+                     maxlength="2" onchange="validateDay()"   
+                     placeholder="dd" required 
+                     oninput="validateLength(this.maxLength, this.value, this.id)">
+                    </td>      
+                <td>
+                    <input type="number" name="" id="hr1" 
+                     maxlength="2" onchange="validate()"      
+                     placeholder="hh"      required 
+                     oninput="validateLength(this.maxLength, this.value, this.id)">
+                    </td>      
+                <td>
+                    <input type="number" name="" id="min1"
+                     maxlength="2" onchange="validate()"      
+                     placeholder="minutes" required 
+                     oninput="validateLength(this.maxLength, this.value, this.id)">
+                    </td>
+                <td>
+                    <input type="number" name="" id="sec1"
+                     maxlength="2" onchange="validate()"      
+                     placeholder="seconds" required 
+                     maxlength="2"
+                     oninput="validateLength(this.maxLength, this.value, this.id)">
+                    </td>
+            </tr>
+            <!-- second row ends here -->
+           <tr>
+               <td colspan="7">
+                 <div class="lists">
+                     <select name="userOperation" id="useroperation" 
+                     onchange="showUI(this.selectedIndex)">
+                         <option value="add">Add</option>
+                         <option value="sub">Subtract</option>
+                         <option value="diff">Date Difference</option>
+                     </select>
+                 </div>
+               </td>
+           </tr>
+            <!-- third row ends here -->
+            <tr class="titleTop">
+                <td colspan="7">
+                    <h3 id="valueofBox">Enter the number of years, months, hours, days to add</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" id="yr2"  
+                    onchange="validateYear()"  
+                    placeholder="no of years"
+                    maxlength="4"
+                     oninput="validateLength(this.maxLength, this.value, this.id)">
+                </td>    
+                <td>
+                    <input type="number" id="mm2"  
+                    onchange="validateMonth()" 
+                    placeholder="no of months" required
+                    maxlength="2"
+                     oninput="validateLength(this.maxLength, this.value, this.id)">
+                </td>      
+                <td>
+                    <input type="number" id="dd2"  
+                    onchange="validateDay()"   
+                    placeholder="no of days" required
+                    maxlength="3"
+                     oninput="validateLength(this.maxLength, this.value, this.id)">
+                </td>      
+                <td>
+                    <input type="number" id="hr2"  
+                    onchange="validate()"      
+                    placeholder="no of hours" required
+                    maxlength="2"
+                     oninput="validateLength(this.maxLength, this.value, this.id)">
+                </td>      
+                <td>
+                    <input type="number" id="min2" 
+                    onchange="validate()"      
+                    placeholder= "no of min" required
+                    maxlength="2"
+                     oninput="validateLength(this.maxLength, this.value, this.id)">
+                </td>
+                <td>
+                    <input type="number" id="sec2" 
+                    onchange="validate()"      
+                    placeholder= "no of seconds" required
+                    maxlength="2"
+                     oninput="validateLength(this.maxLength, this.value, this.id)">
+                </td>
+            </tr>
+            <!-- fourth row ends here -->
+        
+            <tr>
+                <td>
+                    <input type="button" value="Calculate" 
+                    onclick="getValues(userOperation.selectedIndex)" id="calcBtn">
+                </td>
+                <td>
+                    <input type="button" value="Reset" onclick="reset()" id="resetBtn">
+                </td>
+            </tr>
+            <!-- fifth row ends -->
+
+            <tr class="timeTitle">
+                <td>Year</td>
+                <td>Month</td>
+                <td>Day</td>
+                <td>Hour</td>
+                <td>Minute</td>
+                <td>Second</td>
+            </tr> 
+
+            <tr class="customDate">
+                <td>
+                    <input type="number" id="yr3"  disabled placeholder="yyyy">
+                </td>    
+                <td>
+                    <input type="number" id="mm3"  disabled placeholder="mm">
+                </td>      
+                <td>
+                    <input type="number" id="dd3"  disabled placeholder="dd">
+                </td>      
+                <td>
+                    <input type="number" id="hr3"  disabled placeholder="hh">
+                </td>      
+                <td>
+                    <input type="number" id="min3" disabled  placeholder="minutes">
+                </td>
+                <td>
+                    <input type="number" id="sec3" disabled  placeholder="seconds">
+                </td>
+            </tr>
+            <!-- sixth row ends -->           
+        </table>
+       </form>
+
+       <div id="resultsection">
+        Result Date :   <p id="finalresult"></p>
+    </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function validateLength(mxlength, val, id){
+            if( val < 0) {
+            document.getElementById(id).value = 00;   
+        } 
+            if (val.length > mxlength){ 
+            document.getElementById(id).value = val.slice(0, mxlength);
+        }
+        if(id == "dd1"){
+            if(val <= 0){
+                document.getElementById(id).value = 1;
+            }
+            if(val >31){
+                document.getElementById(id).value = 31; 
+            }
+        }
+        if(id == "hr1"){
+            if(val >24){
+                document.getElementById(id).value = 24; 
+        }
+    }
+        if(id == "min1"){
+            if(val >59){
+                document.getElementById(id).value = 00; 
+                document.getElementById("hr1").value =
+                 parseInt(document.getElementById("hr1").value) + 1;
+        }
+        
+    }
+        if(id == "sec1"){
+            if(val >59){
+                document.getElementById(id).value = 00;
+                document.getElementById("min1").value = 
+                parseInt(document.getElementById("min1").value) + 1;
+
+        }
+    }
+}
+    </script>
+</body>
+</html>
